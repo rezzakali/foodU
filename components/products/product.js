@@ -1,4 +1,3 @@
-import { Button } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import boroBurgerImage from '../../public/assets/boro_burger.png';
@@ -16,6 +15,7 @@ import saucesImage2 from '../../public/assets/sauces/sauces2.png';
 import saucesImage3 from '../../public/assets/sauces/sauces3.png';
 import whiteCastleImage from '../../public/assets/white_castle.png';
 import styles from '../../styles/Product.module.css';
+import Button from '../Button';
 import ProductCard from './ProductCard';
 
 const Product = () => {
@@ -28,7 +28,7 @@ const Product = () => {
           <Tabs
             defaultActiveKey="burger"
             id="fill-tab-example"
-            className={`mb-5 ${styles.tabs}`}
+            className={`mb-2 ${styles.tabs}`}
             fill
           >
             <Tab eventKey="burger" title="Burger">
@@ -222,9 +222,8 @@ const Product = () => {
         <div className="text-center mt-5">
           <Button
             className={`btn btn-warning fw-bold ${styles.all_products_btn}`}
-          >
-            All Products
-          </Button>
+            title={'All Products'}
+          />
         </div>
         <br />
         <br />

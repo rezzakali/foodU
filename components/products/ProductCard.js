@@ -7,7 +7,7 @@ import styles from '../../styles/HeroSection.module.css';
 
 const ProductCard = ({ title, text, image, price }) => {
   return (
-    <Card className={`my-3 mx-2 ${styles.main_card}`}>
+    <Card className={`m-1 ${styles.main_card}`}>
       <div className={`${styles.product_cart_image_background}`}>
         <BsSuitHeartFill className={`${styles.wishlist_icon_heart}`} />
         <Image

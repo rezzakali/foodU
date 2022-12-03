@@ -16,15 +16,15 @@ function Navigation() {
       bg={'light'}
       className="mb-3 sticky-top m-auto shadow"
     >
-      <Container fluid className="mx-5">
+      <Container fluid>
         <Navbar.Brand href="/" className={`${styles.nav_brand}`}>
-          <Image src={logo} alt="food_u_logo" height={'10px'} />
+          <Image src={logo} alt="food_u_logo" className="p-2" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls />
         <Navbar.Offcanvas placement="end">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title href="/">
-              <Image src={logo} alt="food_u_logo" height={'10px'} />
+              <Image src={logo} alt="food_u_logo" className="p-2" />
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>

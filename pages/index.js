@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import Button from '../components/Button';
 import Menus from '../components/Menus';
 import OtherFlavour from '../components/OtherFlavour';
 import Product from '../components/products/product';
@@ -32,9 +33,8 @@ const Home = () => {
             <div className="d-flex mt-3">
               <Button
                 className={`btn btn-warning fw-bold ${styles.order_button}`}
-              >
-                Order Now
-              </Button>
+                title={' Order Now'}
+              />
               <h2
                 style={{
                   color: 'green',
@@ -55,9 +55,10 @@ const Home = () => {
         <br />
         <br />
         <div className="text-center mt-5">
-          <Button className={`btn btn-warning fw-bold ${styles.order_button}`}>
-            Menus
-          </Button>
+          <Button
+            className={`btn btn-warning fw-bold ${styles.order_button}`}
+            title={'Menus'}
+          />
           <br />
           <br />
         </div>
@@ -77,32 +78,6 @@ const Home = () => {
       <div style={{ padding: '60px' }}>
         <Product />
       </div>
-
-      {/* <div className={`${styles.offer_pizza_main_background}`}>
-        <div className={`${styles.offer_pizza_second_bg}`}>
-
-          <div className="container">
-            <div
-              className="row align-items-center"
-              style={{ minHeight: '60vh' }}>
-              <div className="col">
-                <div className={`${styles.offer_image_wave}`}>
-                  <div className={`${styles.offer_wave_div}`}>
-                    <p className=''>Get Up to</p>
-                    <h1 className='text-warning fw-bold'>50%</h1>
-                    <h1 className='fw-bold'>OFF</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <h1 className={`fw-bold text-white ${styles.offer_heading}`}>Hot Fresh</h1>
-                <h1 className='fw-bold text-warning'>HOTDOG</h1>
-                <button className='btn btn-warning text-white'>Order Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div style={{ padding: '60px' }}>
         <div className="container-fluid">
           <div className="row">

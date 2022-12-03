@@ -1,11 +1,10 @@
-import Link from 'next/link';
 import React from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { BiTimer } from 'react-icons/bi';
 import { FaPizzaSlice } from 'react-icons/fa';
 import { GiScooter } from 'react-icons/gi';
-import { IoIosArrowForward } from 'react-icons/io';
+import PageHeaderScreen from '../components/PageHeaderScreen';
 import ProductCard from '../components/products/ProductCard';
 import boroBurgerImage from '../public/assets/boro_burger.png';
 import chickenImage from '../public/assets/chicken/chicken.png';
@@ -27,16 +26,7 @@ import styles from '../styles/Product.module.css';
 function menu() {
   return (
     <div className="m-5">
-      <div className={`${classes.menu_header}`}>
-        <h1 className="text-center">Menu Restaurant</h1>
-        <div className={`${classes.menu_header_link}`}>
-          <Link href="/">Home</Link>
-          <span>
-            <IoIosArrowForward />
-            Menu Resturant
-          </span>
-        </div>
-      </div>
+      <PageHeaderScreen pageName={'Menu Restaurant'} />
       <br />
       <br />
       <h3 className="text-center">Menus Of The Day</h3>
@@ -44,7 +34,7 @@ function menu() {
         <Tabs
           defaultActiveKey="burger"
           id="fill-tab-example"
-          className={`mb-5 ${styles.tabs}`}
+          className={`mb-2 ${styles.tabs}`}
           fill
         >
           <Tab eventKey="burger" title="Burger">
@@ -238,7 +228,7 @@ function menu() {
 
       <br />
       <br />
-      <div className="row">
+      <div className="row p-2">
         <div className="col">
           <div
             className={`d-flex align-items-center rounded justify-content-center p-3 ${classes.menu_service_card}`}
