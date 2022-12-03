@@ -32,19 +32,19 @@ const Contact = () => {
       <br />
       <div className="row">
         <div className="col">
-          <BsFillPhoneFill style={{ fill: '#ffc222', fontSize: '80px' }} />
+          <BsFillPhoneFill style={{ fill: '#ffc222', fontSize: '60px' }} />
           <h2>Phone:</h2>
           <p>+ 44 123 456 78 90</p>
           <p style={{ lineHeight: '2px' }}>+ 844 123 444 77 88</p>
         </div>
         <div className="col">
-          <MdEmail style={{ fill: '#ffc222', fontSize: '80px' }} />
+          <MdEmail style={{ fill: '#ffc222', fontSize: '60px' }} />
           <h2>Email:</h2>
           <p>contact@example.com</p>
           <p style={{ lineHeight: '2px' }}>info@example.com</p>
         </div>
         <div className="col">
-          <HiLocationMarker style={{ fill: '#ffc222', fontSize: '80px' }} />
+          <HiLocationMarker style={{ fill: '#ffc222', fontSize: '60px' }} />
           <h2>Address:</h2>
           <p>
             Box 565, Pinney's Beach, Charlestown, Nevis, West Indies, Caribbean

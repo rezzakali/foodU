@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
+import FooterMenu from '../components/footerMenu/FooterMenu';
 import Footer from '../components/mainFooter/footer';
 import Navbar from '../components/Navbar';
 import DashNavbar from '../Dashboard/DashNavbar';
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }) {
           <SessionProvider session={pageProps.session}>
             <Navbar />
             <Component {...pageProps} />
+            <FooterMenu />
             <Footer />
           </SessionProvider>
         </>

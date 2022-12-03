@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { AiOutlineSearch, AiOutlineUnorderedList } from 'react-icons/ai';
-import { HiOutlineSquares2X2 } from 'react-icons/hi2';
+import { BsFillGridFill } from 'react-icons/bs';
 import Button from '../components/Button';
 import PageHeaderScreen from '../components/PageHeaderScreen';
 import styles from '../styles/shop/Index.module.css';
@@ -22,9 +22,7 @@ function shop() {
                 <AiOutlineUnorderedList
                   className={`me-1 ${styles.icon_of_sort}`}
                 />
-                <HiOutlineSquares2X2
-                  className={`me-3 ${styles.icon_of_sort}`}
-                />
+                <BsFillGridFill className={`me-3 ${styles.icon_of_sort}`} />
               </div>
               <div>
                 <Form.Select

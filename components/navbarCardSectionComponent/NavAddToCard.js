@@ -38,24 +38,25 @@ const NavbarAddToCard = () => {
 
   return (
     <>
-      <div className={`d-lg-block ${styles.wishlist_and_cart}`}>
+      <div className={`mt-2 d-lg-block ${styles.wishlist_and_cart}`}>
         <div className="d-flex align-items-center justify-content-end ms-5 mt-2">
-          <div className="mx-2 d-flex">
+          <div
+            className={`mx-2 d-flex rounded-circle border ${styles.nav_add_to_card}`}
+          >
             <div className={`${styles.wishlist}`}>10</div>
-            <AiFillHeart
-              className={`rounded-circle border fs-1 p-2 ${styles.nav_add_to_card}`}
-            />
+            <AiFillHeart className={`fs-1 p-2 `} />
           </div>
-          <div className="mx-2 d-flex">
+          <div
+            className={`mx-2 d-flex rounded-circle border ${styles.nav_add_to_card}`}
+          >
             <div className={`${styles.cart}`}>10</div>
-            <BsFillCartPlusFill
-              className={`rounded-circle border fs-1 p-2 ${styles.nav_add_to_card}`}
-            />
+            <BsFillCartPlusFill className={`fs-1 p-2`} />
           </div>
-          <div className="mx-2" onClick={handleClick}>
-            <HiUser
-              className={`rounded-circle border fs-1 p-2 ${styles.nav_add_to_card}`}
-            />
+          <div
+            className={`mx-2 rounded-circle border ${styles.nav_add_to_card}`}
+            onClick={handleClick}
+          >
+            <HiUser className={`fs-1 p-2 `} />
           </div>
         </div>
       </div>

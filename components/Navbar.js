@@ -31,7 +31,7 @@ function Navigation() {
             <Nav
               className={`justify-content-center flex-grow-1 pe-3 d-flex align-item-center link ${styles.link}`}
             >
-              <div className="d-lg-flex align-items-center">
+              <div className="d-lg-flex align-items-center ms-5">
                 <Link
                   href="/"
                   className={router.pathname == '/' ? styles.active : ''}

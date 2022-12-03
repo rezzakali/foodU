@@ -9,13 +9,13 @@ const OrderNumber = () => {
     >
       <div className="d-flex align-items-center justify-space-between">
         <GiScooter
-          className="d-lg-block d-sm-none fs-1 text-green"
-          style={{ fill: 'green' }}
+          className="d-lg-block d-sm-none text-green"
+          style={{ fill: 'green', fontSize: '60px' }}
         />
         <div className="d-lg-block d-sm-none me-5">
-          <div className="mx-3 w-100 lh-1">
+          <div className="mx-3 w-100 lh-1 mt-3">
             <p className="mb-1 text-secondary">Call and order in</p>
-            <p className="text-warning fw-bold">+91 995-469-5660</p>
+            <p className="text-warning fw-bold fs-5">+91 995-469-5660</p>
           </div>
         </div>
         <div className="d-lg-none d-sm-block my-3 ms-5">
