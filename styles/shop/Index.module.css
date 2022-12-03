@@ -1,0 +1,24 @@
+.select {
+  background-color: #fff7e2;
+  border: none;
+}
+.select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.input_field {
+  border: none;
+  background-color: #fff7e2;
+}
+.input_field:focus {
+  outline: none;
+}
+.icon {
+  font-size: 24px;
+  fill: gray;
+  cursor: pointer;
+}
+.icon_of_sort {
+  font-size: 24px;
+  cursor: pointer;
+}

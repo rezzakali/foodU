@@ -1,0 +1,22 @@
+.header {
+  background-color: #f8f5f0;
+  margin-top: -18px;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+}
+.header_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.header_link a {
+  text-decoration: none;
+  color: gray;
+}
+.header_link a:hover {
+  color: #ffc222;
+}
