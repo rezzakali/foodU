@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import logo from '../public/assets/food_u_logo.png';
 import styles from '../styles/NavAddToCard.module.css';
@@ -8,13 +9,20 @@ import NavbarAddToCard from './navbarCardSectionComponent/NavAddToCard';
 import OrderNumber from './OrderNumber';
 
 function Navigation() {
+  const [scroll, setScroll] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY > 100);
+    });
+  }, []);
 
   return (
     <Navbar
       expand={'lg'}
       bg={'light'}
-      className="mb-3 sticky-top m-auto shadow"
+      className={`mb-3 sticky-top m-auto shadow ${scroll ? 'sticky' : ''} `}
     >
       <Container fluid>
         <Navbar.Brand href="/" className={`${styles.nav_brand}`}>

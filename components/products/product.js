@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import boroBurgerImage from '../../public/assets/boro_burger.png';
@@ -220,10 +221,12 @@ const Product = () => {
           </Tabs>
         </div>
         <div className="text-center mt-5">
-          <Button
-            className={`btn btn-warning fw-bold ${styles.all_products_btn}`}
-            title={'All Products'}
-          />
+          <Link href="/shop">
+            <Button
+              className={`btn btn-warning fw-bold ${styles.all_products_btn}`}
+              title={'All Products'}
+            />
+          </Link>
         </div>
         <br />
         <br />

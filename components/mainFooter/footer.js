@@ -29,7 +29,9 @@ const Footer = () => {
           <p>Monday – Friday: 8am – 4pm Saturday: 9am – 5pm</p>
           <div className="d-flex  ms-5">
             <Link
-              href="#"
+              href="https://www.facebook.com/rezzakali22"
+              target="_blank"
+              rel="noreferrer"
               className={`border p-1 m-2 rounded-circle ${styles.footer_media_icon} `}
               style={{ width: '35px', height: '35px' }}
             >
@@ -38,7 +40,9 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="#"
+              href="https://twitter.com/rezzak_2"
+              target="_blank"
+              rel="noreferrer"
               className={`border p-1 m-2 rounded-circle ${styles.footer_media_icon} `}
               style={{ width: '35px', height: '35px' }}
             >
@@ -46,7 +50,9 @@ const Footer = () => {
               <AiFillTwitterSquare />
             </Link>
             <Link
-              href="#"
+              href="https://www.linkedin.com/in/rezzak-ali-18149a1ab/"
+              target="_blank"
+              rel="noreferrer"
               className={`border p-1 m-2 rounded-circle ${styles.footer_media_icon} `}
               style={{ width: '35px', height: '35px' }}
             >
@@ -54,7 +60,9 @@ const Footer = () => {
               <AiFillLinkedin />
             </Link>
             <Link
-              href="#"
+              href="https://dev.to/rezzakali"
+              target="_blank"
+              rel="noreferrer"
               className={`border p-1 m-2 rounded-circle ${styles.footer_media_icon} `}
               style={{ width: '35px', height: '35px' }}
             >
@@ -64,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="col-sm-12 col-lg-3 col-md-3 p-2">
-          <h4>NEWSLETTER</h4>
+          <h4>NEWS LETTER</h4>
           <p>Subscribe to the weekly newsletter for all the latest updates</p>
         </div>
       </div>

@@ -55,10 +55,12 @@ const Home = () => {
         <br />
         <br />
         <div className="text-center mt-5">
-          <Button
-            className={`btn btn-warning fw-bold ${styles.order_button}`}
-            title={'Menus'}
-          />
+          <Link href="/menu">
+            <Button
+              className={`btn btn-warning fw-bold ${styles.order_button}`}
+              title={'Menus'}
+            />
+          </Link>
           <br />
           <br />
         </div>
@@ -83,7 +85,7 @@ const Home = () => {
           <div className="row">
             <div className="d-flex justify-content-between">
               <h1>Top recipes</h1>
-              <Link href="#" className="mt-3">
+              <Link href="/shop" className="mt-3">
                 see All{' '}
                 <span>
                   <AiOutlineArrowRight />
