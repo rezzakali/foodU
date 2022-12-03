@@ -1,0 +1,21 @@
+.dashboard_allorder_search {
+  border: 1px solid rgba(128, 128, 128, 0.11);
+  background-color: #fff7e2;
+  height: 40px;
+}
+.dashboard_allorder_search:focus {
+  outline: none;
+  border: 1px solid #ffc222;
+  box-shadow: none;
+}
+.search_by_email {
+  height: 40px;
+  background-color: #fff7e2;
+  border: 1px solid rgba(128, 128, 128, 0.11);
+  padding-left: 10px;
+}
+.search_by_email:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #ffc222;
+}

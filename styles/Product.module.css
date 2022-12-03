@@ -1,0 +1,21 @@
+.tabs li button {
+  color: #000;
+  font-weight: bold;
+}
+
+.tabs li button:hover {
+  color: #fff;
+  background-color: #ffc222;
+}
+
+.tabs li:hover {
+  border: 1px solid #ffc222;
+  border-radius: 5px;
+}
+
+/* all_products_btn */
+.all_products_btn:hover {
+  color: #fff;
+}
+
+

@@ -1,0 +1,142 @@
+.order_button:hover {
+  color: white;
+}
+.hero_section_pizza_image img {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.menus_card {
+  background-color: #ffe7a7;
+}
+.menus_card img {
+  transition: 0.2s ease-in;
+}
+.menus_card h6 {
+  color: black;
+  font-weight: bold;
+}
+.menus_card:hover img {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.menus_card:hover h6 {
+  color: white;
+}
+
+/* home card section start from here */
+.main_card:hover .product_cart_image_background {
+  background-color: #ffc222;
+  cursor: pointer;
+}
+.product_cart_image_background img {
+  transition: 0.2s ease-in;
+}
+
+.main_card:hover .product_cart_image_background img {
+  transform: scale(1.1);
+}
+
+.product_cart_image_background {
+  background-color: #ffe090;
+}
+.product_cart_image_background
+/* rating */
+.rating_star {
+  fill: #ffc222;
+}
+.product_cart:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.product_title {
+  font-weight: bold;
+}
+.product_title:hover {
+  color: #ffc222;
+  cursor: pointer;
+}
+
+.wishlist_icon_heart {
+  float: right;
+  margin: 7px 15px;
+  fill: gray;
+  font-size: 24px;
+}
+.wishlist_icon_heart:hover {
+  fill: black;
+}
+
+/* offer_pizza_background */
+.offer_pizza_main_background{
+  background-image: url("../public/assets/offer_50_main_bg.jpg");
+  width: 100%;
+  /* height: 70vh; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+  background-size: auto;
+}
+
+.offer_pizza_second_bg{
+  background-image: url("../public/assets/offer_50.png");
+  width: auto;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+  background-size: auto;
+  margin: auto;
+}
+.offer_image_wave{
+  background-image: url('../public/assets/offer_wave.png');
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  width: 80vw;
+  position: absolute;
+}
+
+.offer_wave_div{
+  margin-left: 40px;
+
+}
+.offer_wave_div p{
+  margin-top: 25px;
+  font-family:Norican,cursive;
+}
+.offer_wave_div h1{
+  margin-top: -20px;
+  font-weight: bold;
+}
+
+.order_now_button{
+  background-color: white;
+  color: black;
+  border: 0;
+}
+.offer_heading{
+  font-family: Norican,cursive;
+}
+
+ /* recepe_card_cart */
+.recepe_card_cart{
+background-color: #ffc222;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 60px;
+}
+.cart:hover{
+  color: white;
+  cursor: pointer;
+}

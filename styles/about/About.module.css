@@ -1,0 +1,53 @@
+.about_header {
+  background-color: #f8f5f0;
+  margin-top: -18px;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+}
+.about_header_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.about_header_link a {
+  text-decoration: none;
+  color: gray;
+}
+.about_header_link a:hover {
+  color: #ffc222;
+}
+
+.left_col h1 {
+  font-family: Norican, cursive;
+  color: #ffc222;
+}
+
+.col_right img {
+  width: auto;
+  object-fit: cover;
+  background-size: cover;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.col_right img:hover {
+  transform: scaleY(1.02);
+}
+
+@media only screen and (max-width: 1024px) {
+  .col_right img {
+    display: none;
+  }
+  .col_left {
+    text-align: center;
+  }
+}
+
+.left_col h3 {
+  font-family: Norican, cursive;
+  color: #ffc222;
+}

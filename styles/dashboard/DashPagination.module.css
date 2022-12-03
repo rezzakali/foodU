@@ -1,0 +1,10 @@
+.pagination_in_all_product li a {
+  background-color: #fef9c3;
+  border-radius: 50%;
+  color: black;
+  margin: 5px;
+}
+.pagination_in_all_product li a:hover {
+  background-color: #ffc222;
+  color: black;
+}

@@ -1,0 +1,28 @@
+.contact_header {
+  background-color: #f8f5f0;
+  margin-top: -18px;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+}
+.contact_header_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.contact_header_link a {
+  text-decoration: none;
+  color: gray;
+}
+.contact_header_link a:hover {
+  color: #ffc222;
+}
+
+.contact_form_input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ffc222;
+}

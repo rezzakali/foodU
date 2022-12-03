@@ -1,0 +1,8 @@
+.dashboard_selection {
+  border: 1px solid rgba(128, 128, 128, 0.11);
+}
+.dashboard_selection:focus {
+  outline: none;
+  border: 1px solid #ffc222;
+  box-shadow: none;
+}

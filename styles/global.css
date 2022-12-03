@@ -1,0 +1,27 @@
+body {
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+    'Arial', sans-serif;
+  overflow-x: hidden;
+}
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+.link a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  color: #181819;
+}
+@media only screen and (max-width: 1024px) {
+  #sidebar {
+    display: none;
+  }
+}

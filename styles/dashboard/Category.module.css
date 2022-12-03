@@ -1,0 +1,8 @@
+.allcategory_input {
+  border: 1px solid rgba(128, 128, 128, 0.11);
+}
+.allcategory_input:focus {
+  outline: none;
+  border: 1px solid #ffc222;
+  box-shadow: none;
+}

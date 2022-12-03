@@ -1,0 +1,35 @@
+.menu_header {
+  background-color: #f8f5f0;
+  margin-top: -18px;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  display: block;
+}
+.menu_header_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.menu_header_link a {
+  text-decoration: none;
+  color: gray;
+}
+.menu_header_link a:hover {
+  color: #ffc222;
+}
+
+.menu_service_card {
+  border: 2px dashed gray;
+}
+.menu_service_card:hover {
+  border-color: #ffc222;
+}
+.icons {
+  transition: 0.1s ease-in;
+}
+.icons:hover {
+  transform: scale(1.1);
+}

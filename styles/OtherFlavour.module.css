@@ -1,0 +1,15 @@
+.other_flavour_col2 {
+  background-color: #00a850;
+  color: white;
+}
+.other_flavour_card:hover {
+  cursor: pointer;
+}
+.other_flavour_card img {
+  transition: 0.2s ease-in;
+}
+
+.other_flavour_card:hover img {
+  transform: scale(1.3);
+  cursor: pointer;
+}

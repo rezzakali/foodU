@@ -1,0 +1,12 @@
+.footer_media_icon {
+  background-color: white;
+  color: black;
+}
+.footer_media_icon:hover {
+  background-color: #ffc222;
+  color: white;
+  cursor: pointer;
+}
+.footer_media_icon:hover svg {
+  fill: white;
+}

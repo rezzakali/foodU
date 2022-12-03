@@ -1,0 +1,13 @@
+.card {
+  background-color: #ffe090;
+}
+.card:hover {
+  background-color: #ffc222;
+  cursor: pointer;
+}
+.edit_option_area {
+  opacity: 0;
+}
+.card:hover .edit_option_area {
+  opacity: 1;
+}

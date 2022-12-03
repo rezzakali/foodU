@@ -1,0 +1,44 @@
+.nav_add_to_card:hover {
+  background-color: #ffc222;
+  color: white;
+  cursor: pointer;
+}
+.wishlist,
+.cart {
+  background-color: #ffc222;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  position: absolute;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  margin-top: -7px;
+}
+
+.link a:hover {
+  color: #ffc222;
+}
+.link a.active {
+  color: #ffc222;
+}
+.nav_phone {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 100px;
+}
+@media screen and (max-width: 992px) {
+  .nav_phone {
+    display: none;
+  }
+  .wishlist_and_cart {
+    display: none;
+  }
+  .nav_brand {
+    display: none;
+  }
+}

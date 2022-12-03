@@ -1,0 +1,37 @@
+.register_input {
+  border: 1px solid rgba(128, 128, 128, 0.39);
+}
+.register_input:focus,
+.register_input:active {
+  border: 1px solid rgba(128, 128, 128, 0.39);
+  outline: none;
+  box-shadow: none;
+}
+
+.register_btn {
+  border: none;
+  color: black;
+}
+
+.register_btn:hover {
+  color: white;
+}
+.register_login_link,
+.register_admin_login_link {
+  text-decoration: none;
+  color: black;
+}
+.register_login_link:hover {
+  color: #ffc222;
+}
+.register_admin_login_link:hover {
+  color: #ffc222;
+}
+
+.auth_para p {
+  color: black;
+}
+.auth_para p:hover {
+  color: #ffc222;
+  cursor: pointer;
+}
