@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import { HiMoon, HiSun } from 'react-icons/hi';
 
 function DashNavbar() {
   return (
@@ -17,10 +16,6 @@ function DashNavbar() {
           <Navbar.Brand className="fw-bold fs-4">Dashboard</Navbar.Brand>
 
           <div style={{ marginRight: '10px', float: 'right' }}>
-            <span className="mx-4">
-              <HiMoon />
-              <HiSun />
-            </span>
             <Image
               src="/pic.png"
               width={100}
@@ -30,6 +25,7 @@ function DashNavbar() {
                 width: '50px',
                 height: '50px',
                 borderRadius: '50%',
+                cursor: 'pointer',
               }}
               alt="user_pic"
             />

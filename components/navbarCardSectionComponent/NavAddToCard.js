@@ -1,8 +1,12 @@
+import Link from 'next/link';
 import React, { useRef, useState } from 'react';
-import { Button, Form, InputGroup, Modal } from 'react-bootstrap';
+import { Button, Form, InputGroup, Modal, Popover } from 'react-bootstrap';
 import Overlay from 'react-bootstrap/Overlay';
-import Popover from 'react-bootstrap/Popover';
-import { AiFillHeart, AiOutlineUser } from 'react-icons/ai';
+import {
+  AiFillHeart,
+  AiOutlineShoppingCart,
+  AiOutlineUser,
+} from 'react-icons/ai';
 import { BsFillCartPlusFill } from 'react-icons/bs';
 import { HiUser } from 'react-icons/hi';
 import { MdOutlineAlternateEmail } from 'react-icons/md';
@@ -17,6 +21,16 @@ const NavbarAddToCard = () => {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showAdminModal, setShowAdminModal] = useState(false);
+
+  // for add to cart modal
+  const [showCartModal, setShowCartModal] = useState(false);
+
+  const handleShowCartModal = () => {
+    setShowCartModal(true);
+  };
+  const handleCloseCartModal = () => {
+    setShowCartModal(false);
+  };
 
   const ref = useRef(null);
 
@@ -38,20 +52,85 @@ const NavbarAddToCard = () => {
 
   return (
     <>
+      <Modal
+        show={showCartModal}
+        onHide={handleCloseCartModal}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Shopping Cart</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center">
+          <div
+            style={{
+              width: '50px',
+              height: '50px',
+              borderRadius: '50%',
+              backgroundColor: '#fef6c7',
+              color: '#ffc222',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <AiOutlineShoppingCart size={30} />
+          </div>
+          <div>
+            <h6 className="fw-bold">Your cart is empty</h6>
+            <p>
+              No items added in your cart. Please add product to your cart list.
+            </p>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            style={{
+              backgroundColor: '#ffc222',
+              padding: '10px',
+              borderRadius: '5px',
+              border: 'none',
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            Proceed To Checkout
+            <span
+              style={{
+                backgroundColor: 'white',
+                color: 'green',
+                float: 'right',
+                width: '80px',
+                padding: '5px',
+                borderRadius: '5px',
+              }}
+            >
+              $ 0
+            </span>
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div className={`mt-2 d-lg-block ${styles.wishlist_and_cart}`}>
         <div className="d-flex align-items-center justify-content-end ms-5 mt-2">
+          <Link href="/wishlist">
+            <div
+              className={`mx-2 d-flex rounded-circle border ${styles.nav_add_to_card}`}
+            >
+              <div className={`${styles.wishlist}`}>10</div>
+              <AiFillHeart className={`fs-1 p-2 `} />
+            </div>
+          </Link>
+
           <div
             className={`mx-2 d-flex rounded-circle border ${styles.nav_add_to_card}`}
-          >
-            <div className={`${styles.wishlist}`}>10</div>
-            <AiFillHeart className={`fs-1 p-2 `} />
-          </div>
-          <div
-            className={`mx-2 d-flex rounded-circle border ${styles.nav_add_to_card}`}
+            onClick={handleShowCartModal}
           >
             <div className={`${styles.cart}`}>10</div>
             <BsFillCartPlusFill className={`fs-1 p-2`} />
           </div>
+
           <div
             className={`mx-2 rounded-circle border ${styles.nav_add_to_card}`}
             onClick={handleClick}
@@ -223,6 +302,7 @@ const NavbarAddToCard = () => {
                   aria-describedby="basic-addon1"
                   required
                   className={`${classes.register_input}`}
+                  autoFocus
                 />
               </InputGroup>
             </Form.Group>

@@ -29,7 +29,7 @@ function Navigation() {
           <Image src={logo} alt="food_u_logo" className="p-2" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls />
-        <Navbar.Offcanvas placement="end">
+        <Navbar.Offcanvas placement="start">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title href="/">
               <Image src={logo} alt="food_u_logo" className="p-2" />

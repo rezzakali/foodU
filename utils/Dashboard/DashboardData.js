@@ -52,7 +52,7 @@ const items = [
     icon: <AiOutlineSetting />,
   },
   {
-    href: '/admin/backtohome',
+    href: '/',
     name: 'Back Home',
     icon: <SlArrowLeft />,
   },
