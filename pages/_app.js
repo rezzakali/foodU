@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { SessionProvider } from 'next-auth/react';
 import Head from 'next/head';
 import { useState } from 'react';
+import { SSRProvider } from 'react-bootstrap';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import FooterMenu from '../components/footerMenu/FooterMenu';
@@ -15,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   const [admin, setAdmin] = useState(true);
 
   return (
-    <>
+    <SSRProvider>
       {admin ? (
         <>
           <Head>
@@ -46,7 +47,7 @@ function MyApp({ Component, pageProps }) {
           </div>
         </>
       )}
-    </>
+    </SSRProvider>
   );
 }
 

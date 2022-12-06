@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { Button, Form, InputGroup, Modal, Popover } from 'react-bootstrap';
@@ -23,6 +22,20 @@ const NavbarAddToCard = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showAdminModal, setShowAdminModal] = useState(false);
 
+  // register
+  const [newUser, setNewUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  const [profile, setProfile] = useState('');
+
+  // for login
+  const [logUser, setLogUser] = useState({
+    email: '',
+    password: '',
+  });
+
   // for add to cart modal
   const [showCartModal, setShowCartModal] = useState(false);
 
@@ -39,13 +52,6 @@ const NavbarAddToCard = () => {
     setShow(!show);
     setTarget(event.target);
   };
-  // register
-  const [newUser, setNewUser] = useState({
-    name: '',
-    email: '',
-    password: '',
-  });
-  const [profile, setProfile] = useState('');
 
   const handleProfile = (e) => {
     setProfile(e.target.files[0]);
@@ -54,21 +60,34 @@ const NavbarAddToCard = () => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('name', newUser.name);
-    formData.append('email', newUser.email);
-    formData.append('password', newUser.password);
-    // formData.append('profile', profile);
+    // const formData = new FormData();
+    // formData.append('name', newUser.name);
+    // formData.append('email', newUser.email);
+    // formData.append('password', newUser.password);
+    // // formData.append('profile', profile);
 
-    axios
-      .post('http://localhost:3000/api/register', formData)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
+    // axios
+    //   .post('http://localhost:3000/api/register', formData)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => console.log(err));
+    const res = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: newUser.name,
+        email: newUser.email,
+        password: newUser.password,
+      }),
+    });
+    const result = await res.json();
+    console.log(result);
   };
 
   const handleCloseRegisterModal = () => {
@@ -92,6 +111,26 @@ const NavbarAddToCard = () => {
   };
   const handleAdmin = () => {
     setShowAdminModal(true);
+  };
+
+  const logHandleChange = (e) => {
+    setLogUser({ ...logUser, [e.target.name]: e.target.value });
+  };
+
+  const handleLoginForm = async (e) => {
+    e.preventDefault();
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: logUser.email,
+        password: logUser.password,
+      }),
+    });
+    const result = await res.json();
+    console.log(result);
   };
 
   return (
@@ -207,7 +246,7 @@ const NavbarAddToCard = () => {
           <Modal.Title>Sign Up</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} type="multipart/form-data">
             <Form.Label>Name</Form.Label>
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1">
@@ -268,7 +307,7 @@ const NavbarAddToCard = () => {
                 type="file"
                 placeholder="choose file"
                 className={`${classes.register_input}`}
-                required
+                // required
                 name="profile"
                 onChange={handleProfile}
               />
@@ -292,7 +331,7 @@ const NavbarAddToCard = () => {
           <Modal.Title>Sign In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleLoginForm}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email</Form.Label>
               <InputGroup className="mb-3">
@@ -306,6 +345,9 @@ const NavbarAddToCard = () => {
                   required
                   className={`${classes.register_input}`}
                   autoFocus
+                  name="email"
+                  value={logUser.email}
+                  onChange={logHandleChange}
                 />
               </InputGroup>
             </Form.Group>
@@ -322,6 +364,9 @@ const NavbarAddToCard = () => {
                   aria-describedby="basic-addon1"
                   required
                   className={`${classes.register_input}`}
+                  name="password"
+                  value={logUser.password}
+                  onChange={logHandleChange}
                 />
               </InputGroup>
             </Form.Group>
