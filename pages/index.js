@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       swal({
-        text: `You can log in as admin! email: admin@gmail.com password:admin@123`,
+        text: `You can log in as admin! email: admin@gmail.com password:admin123`,
         button: 'Okay!',
       });
     }, 3000);
