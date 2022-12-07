@@ -11,12 +11,14 @@ import { BsFillCartPlusFill } from 'react-icons/bs';
 import { HiUser } from 'react-icons/hi';
 import { MdOutlineAlternateEmail } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
+import swal from 'sweetalert';
 import classes from '../../styles/AuthModal.module.css';
 import styles from '../../styles/NavAddToCard.module.css';
 
 const NavbarAddToCard = () => {
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
+  const [registeredUser, setRegisteredUser] = useState(false);
 
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -28,7 +30,6 @@ const NavbarAddToCard = () => {
     email: '',
     password: '',
   });
-  const [profile, setProfile] = useState('');
 
   // for login
   const [logUser, setLogUser] = useState({
@@ -53,28 +54,13 @@ const NavbarAddToCard = () => {
     setTarget(event.target);
   };
 
-  const handleProfile = (e) => {
-    setProfile(e.target.files[0]);
-  };
   const regiterHandleChange = (e) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
   };
-
+  // register
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const formData = new FormData();
-    // formData.append('name', newUser.name);
-    // formData.append('email', newUser.email);
-    // formData.append('password', newUser.password);
-    // // formData.append('profile', profile);
-
-    // axios
-    //   .post('http://localhost:3000/api/register', formData)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.log(err));
     const res = await fetch('/api/register', {
       method: 'POST',
       headers: {
@@ -87,7 +73,22 @@ const NavbarAddToCard = () => {
       }),
     });
     const result = await res.json();
-    console.log(result);
+    if (result.statusCode === 201) {
+      swal('Thanks for registered!');
+      setRegisteredUser(true);
+      setShowRegisterModal(false);
+      setTimeout(() => {
+        handleLogin();
+      }, 10);
+    }
+
+    if (result.statusCode === 403) {
+      swal('user already exits!');
+    }
+
+    if (result.statusCode === 400) {
+      swal('Each field must be required!');
+    }
   };
 
   const handleCloseRegisterModal = () => {
@@ -232,8 +233,11 @@ const NavbarAddToCard = () => {
         >
           <Popover id="popover-contained">
             <Popover.Body className={`${classes.auth_para}`}>
-              <p onClick={handleRegister}>Register</p>
-              <p onClick={handleLogin}>Login</p>
+              {registeredUser ? (
+                <p onClick={handleLogin}>Login</p>
+              ) : (
+                <p onClick={handleRegister}>Register</p>
+              )}
               <p onClick={handleAdmin}>Login as Admin</p>
             </Popover.Body>
           </Popover>
@@ -290,7 +294,7 @@ const NavbarAddToCard = () => {
                   <RiLockPasswordLine />
                 </InputGroup.Text>
                 <Form.Control
-                  placeholder="***"
+                  placeholder="password"
                   aria-label="name"
                   aria-describedby="basic-addon1"
                   required
@@ -301,18 +305,7 @@ const NavbarAddToCard = () => {
                 />
               </InputGroup>
             </Form.Group>
-            <br />
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Control
-                type="file"
-                placeholder="choose file"
-                className={`${classes.register_input}`}
-                // required
-                name="profile"
-                onChange={handleProfile}
-              />
-            </Form.Group>
-            <br />
+
             <Button
               type="submit"
               className={`bg-warning w-100 fw-bold ${classes.register_btn}`}

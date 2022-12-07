@@ -6,11 +6,12 @@ async function handler(req, res) {
 
   if (req.method === 'POST') {
     const { name, email, password } = req.body;
+
     if (!name && !email && !password) {
       res.status(400).send('Each field must be required!');
     }
     // check existing user
-    const existUser = await User.findOne(email);
+    const existUser = await User.findOne({ email });
     if (existUser) {
       res.status(403).send('User already exist!');
     }
@@ -22,7 +23,7 @@ async function handler(req, res) {
     await newUser.save();
     res.status(201).json({
       success: true,
-      message: 'Registered successfully!',
+      statusCode: 201,
     });
   }
 }
