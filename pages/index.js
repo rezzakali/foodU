@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import swal from 'sweetalert';
 import Button from '../components/Button';
 import Menus from '../components/Menus';
 import OtherFlavour from '../components/OtherFlavour';
@@ -14,6 +16,14 @@ import heroPizzaImage from '../public/assets/hero_food.png';
 import styles from '../styles/HeroSection.module.css';
 
 const Home = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      swal({
+        text: `You can log in as admin! email: admin@gmail.com password:admin@123`,
+        button: 'Okay!',
+      });
+    }, 3000);
+  }, []);
   return (
     <div>
       <div className="m-5">

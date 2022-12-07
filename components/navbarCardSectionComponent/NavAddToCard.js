@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Button, Form, InputGroup, Modal, Popover } from 'react-bootstrap';
 import Overlay from 'react-bootstrap/Overlay';
 import {
@@ -13,13 +13,21 @@ import { HiUser } from 'react-icons/hi';
 import { MdOutlineAlternateEmail } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import swal from 'sweetalert';
+import { AdminContext } from '../../pages/_app';
 import classes from '../../styles/AuthModal.module.css';
 import styles from '../../styles/NavAddToCard.module.css';
 
 const NavbarAddToCard = () => {
+  const { admin, setAdmin } = useContext(AdminContext);
+
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
   const [registeredUser, setRegisteredUser] = useState(false);
+
+  const [adminUser, setAdminUser] = useState({
+    email: '',
+    password: '',
+  });
 
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -117,6 +125,32 @@ const NavbarAddToCard = () => {
     setShowAdminModal(true);
   };
 
+  const handleAdminChange = (e) => {
+    setAdminUser({ ...adminUser, [e.target.name]: e.target.value });
+  };
+
+  const handleAdminSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch('/api/admin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: adminUser.email,
+        password: adminUser.password,
+      }),
+    });
+    const result = await res.json();
+    if (result.success === true) {
+      setTimeout(() => {
+        setAdmin(false);
+        router.push('/admin/dashboard');
+      }, 200);
+    }
+  };
+
+  // admin ends
   const logHandleChange = (e) => {
     setLogUser({ ...logUser, [e.target.name]: e.target.value });
   };
@@ -137,7 +171,10 @@ const NavbarAddToCard = () => {
     if (result.success === true) {
       swal('logged in successfully');
       setShowLoginModal(false);
-      router.push('/');
+      setTimeout(() => {
+        setAdmin(false);
+        router.push('/admin/dashboard');
+      }, 200);
     }
   };
 
@@ -390,7 +427,7 @@ const NavbarAddToCard = () => {
           <Modal.Title>Login As Admin</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleAdminSubmit}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email</Form.Label>
               <InputGroup className="mb-3">
@@ -404,6 +441,9 @@ const NavbarAddToCard = () => {
                   required
                   className={`${classes.register_input}`}
                   autoFocus
+                  name="email"
+                  value={adminUser.email}
+                  onChange={handleAdminChange}
                 />
               </InputGroup>
             </Form.Group>
@@ -420,6 +460,9 @@ const NavbarAddToCard = () => {
                   aria-describedby="basic-addon1"
                   required
                   className={`${classes.register_input}`}
+                  name="password"
+                  value={adminUser.password}
+                  onChange={handleAdminChange}
                 />
               </InputGroup>
             </Form.Group>
@@ -429,7 +472,7 @@ const NavbarAddToCard = () => {
               type="submit"
               className={`bg-warning w-100 fw-bold ${classes.register_btn}`}
             >
-              Login
+              Login as Admin
             </Button>
           </Form>
         </Modal.Body>
