@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
 import { Button, Form, InputGroup, Modal, Popover } from 'react-bootstrap';
 import Overlay from 'react-bootstrap/Overlay';
@@ -23,6 +24,8 @@ const NavbarAddToCard = () => {
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showAdminModal, setShowAdminModal] = useState(false);
+
+  const router = useRouter();
 
   // register
   const [newUser, setNewUser] = useState({
@@ -131,7 +134,11 @@ const NavbarAddToCard = () => {
       }),
     });
     const result = await res.json();
-    console.log(result);
+    if (result.success === true) {
+      swal('logged in successfully');
+      setShowLoginModal(false);
+      router.push('/');
+    }
   };
 
   return (
